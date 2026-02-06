@@ -38,25 +38,23 @@ export function Header() {
           </div>
           <div className="hidden sm:flex flex-col">
             <span className="text-base font-bold text-white leading-tight tracking-tight">
-              प्रतिनिधि सभा निर्वाचन २०८२
+              प्रतिनिधि सभा निर्वाचन २०८२ डाटा
             </span>
-            <span className="text-[10px] text-cyan-500/80 font-medium uppercase tracking-widest italic">
-              Election Data Nepal
-            </span>
+            
           </div>
         </Link>
 
         {/* Search Bar */}
         <div className="flex-1 max-w-md relative group hidden sm:block">
           <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-            <Search className="h-4 w-4 text-cyan-500/50 group-focus-within:text-cyan-400" />
+            <Search className="h-4 w-4 text-white group-focus-within:text-cyan-400" />
           </div>
           <input
             type="text"
             onClick={handleSearchClick}
             readOnly
             placeholder="उम्मेदवार वा जिल्ला खोज्नुहोस्..."
-            className="w-full bg-cyan-950/20 border border-cyan-900/50 rounded-full py-2.5 pl-10 pr-4 text-sm text-cyan-100 placeholder:text-cyan-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition-all"
+            className="w-full bg-cyan-950/20 border border-cyan-900/50 rounded-full py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-500/20 transition-all"
           />
         </div>
 
