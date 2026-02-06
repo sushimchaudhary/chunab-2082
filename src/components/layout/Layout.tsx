@@ -36,7 +36,7 @@ export function Layout({ children, className }: LayoutProps) {
               </p>
             </div>
             <p className="text-xs text-cyan-500 font-medium">
-              नेपाल निर्वाचन उम्मेदवार ड्यासबोर्ड • नागरिक सचेतनाका लागि डाटा
+            नागरिक सचेतनाका लागि डाटा
             </p>
           </div>
 
@@ -50,9 +50,7 @@ export function Layout({ children, className }: LayoutProps) {
               rel="noopener noreferrer"
               className="group flex items-center gap-2"
             >
-              <span className="text-xs text-white transition-colors">
-                Powered by
-              </span>
+             
               <span className="text-sm text-white group-hover:text-cyan-400 transition-all font-bold">
                 Sempa Tech
               </span>

@@ -175,10 +175,7 @@ const Index = () => {
         </div>
       </div> */}
 
-      <div
-        className="mb-10 w-full animate-slide-in-bottom"
-        style={{ animationDelay: "0.2s" }}
-      >
+      <div id="main-content" className="mb-10 w-full scroll-mt-24">
          <div className="relative mb-4 flex items-center gap-3">
         <div className="relative flex-1 group">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-cyan-700 group-focus-within:text-cyan-400 transition-colors z-10" />
