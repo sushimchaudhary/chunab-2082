@@ -14,7 +14,7 @@ import {
   Cell,
   PieChart,
   Pie,
-  Legend,
+  
 } from "recharts";
 
 const CHART_COLORS = [

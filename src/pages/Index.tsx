@@ -4,13 +4,13 @@ import {
   Flag,
   MapPin,
   TrendingUp,
-  Flame,
+  
   Search,
   SlidersHorizontal,
   ChevronUp,
-  X,
+ 
 } from "lucide-react";
-import { Layout } from "@/components/layout/Layout";
+
 import { StatCard } from "@/components/dashboard/StatCard";
 import { FilterPanel } from "@/components/filters/FilterPanel";
 import { CandidateCard } from "@/components/candidates/CandidateCard";
@@ -29,9 +29,9 @@ import {
 import { Candidate, FilterState } from "@/types/election";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"; // Input import गरियो
-import { TrendingBattles } from "@/components/Tranding/TrandingBattles";
+import { Input } from "@/components/ui/input"; 
 import { cn } from "@/lib/utils";
+import { Layout } from "@/components/layout/Layout";
 
 const Index = () => {
   const [filters, setFilters] = useState<FilterState>({
@@ -55,7 +55,6 @@ const Index = () => {
 
   const filterOptions = useFilterOptions(allCandidates, filters);
 
-  // Search र Filter दुवैलाई मिलाएर डाटा फिल्टर गर्ने
   const filteredCandidates = useFilteredCandidates(allCandidates, filters);
 
   const finalCandidates = useMemo(() => {

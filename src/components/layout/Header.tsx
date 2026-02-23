@@ -1,12 +1,14 @@
 "use client"
 
 import { Link, useLocation } from "react-router-dom";
-import { Users, Menu, X, Search } from "lucide-react";
+import { Users, Menu, X, Search, FileText } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { path: "/candidates", label: "Candidates", labelNp: "उम्मेदवारहरू", icon: Users },
+    { path: "/manifesto", label: "Manifesto", labelNp: "घोषणापत्र", icon: FileText },
+
 ];
 
 export function Header() {
@@ -16,7 +18,7 @@ export function Header() {
   const handleSearchClick = () => {
     const element = document.getElementById("main-content");
     if (element) {
-      // scroll-margin-top ले हेडरले कन्टेन्ट नछोपोस् भनेर ग्याप राख्छ
+      
       const yOffset = -80; 
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });

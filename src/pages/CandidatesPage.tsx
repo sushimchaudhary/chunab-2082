@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from "react";
-import { Layout } from "@/components/layout/Layout";
+
 import { FilterPanel } from "@/components/filters/FilterPanel";
 import { CandidateCard } from "@/components/candidates/CandidateCard";
 import { CandidateDetail } from "@/components/candidates/CandidateDetail";
@@ -10,10 +10,11 @@ import {
 } from "@/hooks/useElectionData";
 import { Candidate, FilterState } from "@/types/election";
 import { Input } from "@/components/ui/input";
-import { Search, Users, SlidersHorizontal, ChevronUp } from "lucide-react"; // नयाँ आइकनहरू
+import { Search, Users, SlidersHorizontal, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DISTRICT_MAP_EN_NP, PARTY_MAP_EN_NP } from "@/data/mappings";
 import { cn } from "@/lib/utils";
+import { Layout } from "@/components/layout/Layout";
 
 const ITEMS_PER_PAGE = 24;
 
@@ -36,13 +37,12 @@ const CandidatesPage = () => {
   );
   const [detailOpen, setDetailOpen] = useState(false);
 
-  // Filter Panel देखाउन वा लुकाउनका लागि स्टेट
+
   const [showFilters, setShowFilters] = useState(false);
 
   const filterOptions = useFilterOptions(allCandidates, filters);
   const filteredByFilters = useFilteredCandidates(allCandidates, filters);
 
-  // Apply search filter (तपाईँको पुरानै लजिक)
   const filteredCandidates = useMemo(() => {
     if (!searchQuery.trim()) return filteredByFilters;
     const query = searchQuery.toLowerCase();
