@@ -63,7 +63,7 @@ export function ManifestoSection() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-black ">
+      <div className=" bg-black ">
         <div className="max-w-8xl mx-auto mb-10">
           <Link
             to="/candidates"
@@ -102,9 +102,7 @@ export function ManifestoSection() {
                   />
                 </div>
 
-                {/* <span className="text-[10px] font-bold text-cyan-600 bg-cyan-500/5 px-2 py-1 rounded uppercase tracking-wider">
-                  PDF Available
-                </span> */}
+                
               </div>
 
               <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
@@ -126,7 +124,7 @@ export function ManifestoSection() {
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto mt-12 text-center p-6 border border-dashed border-gray-800 rounded-xl">
+        <div className="max-w-8xl mx-auto mt-3 text-center py-4">
           <p className="text-gray-500 text-xs italic font-nepali">
             * यी कागजातहरू अध्ययनको लागि मात्र उपलब्ध गराइएका हुन्।
           </p>
