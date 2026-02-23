@@ -23,7 +23,7 @@ const manifestoList = [
   {
     id: "nekapa",
     files: [{ name: "पूर्ण घोषणापत्र", file: "nekapa.pdf" }],
-    name: "नेकपा माओवादी",
+    name: "नेकपा ",
     color: "border-red-500/30",
     priorities: "समाजवाद र उत्पादन क्रान्ति",
     symbol: "/symbol/nekapa.jpg",
