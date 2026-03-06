@@ -128,12 +128,7 @@ export default function VoteCountI() {
         />
       </div>
 
-      {/* --- MOBILE INFO BAR --- */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-red-600 py-1 px-4 text-center">
-        <p className="text-[10px] font-bold italic tracking-widest">
-          डाटा आधिकारिक स्रोतहरूबाट सिधै लोड भइरहेको छ
-        </p>
-      </div>
+     
     </div>
     </Layout>
   );
