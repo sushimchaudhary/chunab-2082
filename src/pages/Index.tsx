@@ -4,11 +4,9 @@ import {
   Flag,
   MapPin,
   TrendingUp,
-  
   Search,
   SlidersHorizontal,
   ChevronUp,
- 
 } from "lucide-react";
 
 import { StatCard } from "@/components/dashboard/StatCard";
@@ -29,9 +27,11 @@ import {
 import { Candidate, FilterState } from "@/types/election";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"; 
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Layout } from "@/components/layout/Layout";
+import VoteCounte from "../components/live-update/page";
+import VoteCountI from "../components/live-update/page";
 
 const Index = () => {
   const [filters, setFilters] = useState<FilterState>({
@@ -81,7 +81,7 @@ const Index = () => {
   };
   return (
     <Layout>
-      <div className="mb-12 animate-fade-in flex flex-col items-center">
+      {/* <div className="mb-12 animate-fade-in flex flex-col items-center">
         <div className="w-full max-w-4xl">
           <Countdown
             targetDate={electionDate}
@@ -90,6 +90,9 @@ const Index = () => {
             className="shadow-2xl shadow-cyan-500/5"
           />
         </div>
+      </div> */}
+      <div className="pb-10">
+        <VoteCountI />
       </div>
 
       {/* Stats Overview - Updated Colors */}
@@ -124,99 +127,45 @@ const Index = () => {
         />
       </div>
 
-      {/* Trending Battles Section */}
-      {/* <div className="mb-12 w-full overflow-hidden">
-        <div className="flex items-center justify-between mb-6 px-2">
-          <div className="flex items-center gap-2">
-            <div className="p-2 bg-cyan-500/10 rounded-lg">
-              <Flame className="h-5 w-5 text-cyan-600 animate-pulse" />
-            </div>
-            <h3 className="text-2xl font-bold text-white tracking-tight">
-              चर्चित प्रतिस्पर्धा
-            </h3>
-          </div>
-          <span className="text-xs text-slate-500 italic hidden sm:block">
-            दायाँ स्वाइप गर्नुहोस् →
-          </span>
-        </div>
-
-        <div
-          className="flex gap-4 md:gap-6 overflow-x-auto pb-6 px-2 
-    [&::-webkit-scrollbar]:hidden 
-    [-ms-overflow-style:none] 
-    [scrollbar-width:none]"
-        >
-          <TrendingBattles
-            candidate1={allCandidates[0]}
-            candidate2={allCandidates[1]}
-            constituencyName="झापा क्षेत्र ५"
-          />
-          <TrendingBattles
-            candidate1={allCandidates[2]}
-            candidate2={allCandidates[3]}
-            constituencyName="सर्लाही क्षेत्र ४"
-          />
-          <TrendingBattles
-            candidate1={allCandidates[4]}
-            candidate2={allCandidates[5]}
-            constituencyName="चितवन क्षेत्र २"
-          />
-          <TrendingBattles
-            candidate1={allCandidates[6]}
-            candidate2={allCandidates[7]}
-            constituencyName="काठमाडौँ क्षेत्र ४"
-          />
-          <TrendingBattles
-            candidate1={allCandidates[8]}
-            candidate2={allCandidates[9]}
-            constituencyName="तनहुँ क्षेत्र १"
-          />
-        </div>
-      </div> */}
-
       <div id="main-content" className="mb-10 w-full scroll-mt-24">
-         <div className="relative mb-4 flex items-center gap-3">
-        <div className="relative flex-1 group">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-cyan-700 group-focus-within:text-cyan-400 transition-colors z-10" />
+        <div className="relative mb-4 flex items-center gap-3">
+          <div className="relative flex-1 group">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-cyan-700 group-focus-within:text-cyan-400 transition-colors z-10" />
 
-          <Input
-            type="text"
-            placeholder="नाम, जिल्ला, वा पार्टी खोज्नुहोस्..."
-            value={searchQuery}
-            onFocus={() => setShowFilters(true)}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              
-            }}
+            <Input
+              type="text"
+              placeholder="नाम, जिल्ला, वा पार्टी खोज्नुहोस्..."
+              value={searchQuery}
+              onFocus={() => setShowFilters(true)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+              }}
+              className={cn(
+                "pl-10 py-3 text-base bg-cyan-950/20 border-cyan-900/50 text-cyan-50 rounded-md transition-all duration-300",
+
+                "focus-visible:ring-2 focus-visible:ring-cyan-500/40 focus-visible:ring-offset-0 focus-visible:border-cyan-500",
+                "shadow-[0_0_20px_-5px_rgba(6,182,212,0.1)] focus-visible:shadow-[0_0_20px_-3px_rgba(6,182,212,0.3)]",
+              )}
+            />
+          </div>
+
+          <Button
+            variant="outline"
+            onClick={() => setShowFilters(!showFilters)}
             className={cn(
-              "pl-10 py-3 text-base bg-cyan-950/20 border-cyan-900/50 text-cyan-50 rounded-md transition-all duration-300",
-             
-              
-              "focus-visible:ring-2 focus-visible:ring-cyan-500/40 focus-visible:ring-offset-0 focus-visible:border-cyan-500",
-              "shadow-[0_0_20px_-5px_rgba(6,182,212,0.1)] focus-visible:shadow-[0_0_20px_-3px_rgba(6,182,212,0.3)]",
+              "h-10 w-10 p-0 rounded-md border-cyan-900/50 transition-all duration-200 shrink-0",
+              showFilters
+                ? "bg-cyan-500 text-[#011c22] border-cyan-500 hover:bg-cyan-500 hover:text-[#011c22]" // Hover state fixed
+                : "bg-cyan-950/20 text-cyan-400 hover:bg-cyan-900/40 hover:text-cyan-300 hover:border-cyan-700",
             )}
-          />
+          >
+            {showFilters ? (
+              <ChevronUp className="h-5 w-5 stroke-[2.5px]" />
+            ) : (
+              <SlidersHorizontal className="h-5 w-5 stroke-[2px]" />
+            )}
+          </Button>
         </div>
-
-       
-        <Button
-          variant="outline"
-          onClick={() => setShowFilters(!showFilters)}
-          className={cn(
-            "h-10 w-10 p-0 rounded-md border-cyan-900/50 transition-all duration-200 shrink-0",
-            showFilters
-              ? "bg-cyan-500 text-[#011c22] border-cyan-500 hover:bg-cyan-500 hover:text-[#011c22]" // Hover state fixed
-              : "bg-cyan-950/20 text-cyan-400 hover:bg-cyan-900/40 hover:text-cyan-300 hover:border-cyan-700",
-          )}
-        >
-          {showFilters ? (
-            <ChevronUp className="h-5 w-5 stroke-[2.5px]" />
-          ) : (
-            <SlidersHorizontal className="h-5 w-5 stroke-[2px]" />
-          )}
-        </Button>
-      </div>
-
 
         {showFilters && (
           <div className="animate-in fade-in slide-in-from-top-4 duration-500 ease-out">
@@ -230,7 +179,7 @@ const Index = () => {
           </div>
         )}
       </div>
-{/* 
+      {/* 
       Candidate Preview */}
       <div
         className="animate-slide-in-bottom"
@@ -285,6 +234,8 @@ const Index = () => {
         open={detailOpen}
         onOpenChange={setDetailOpen}
       />
+
+      <VoteCounte />
 
       {/* Charts Grid - Dark Containers */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">

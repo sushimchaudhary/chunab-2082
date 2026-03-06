@@ -27,6 +27,7 @@ export interface Candidate {
   OTHERDETAILS?: string;
   E_STATUS?: string;
   DOB?: number;
+  TotalValidVote?: string | number;
 }
 
 export interface FilterState {

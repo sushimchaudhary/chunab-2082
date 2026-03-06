@@ -1,13 +1,14 @@
 "use client"
 
 import { Link, useLocation } from "react-router-dom";
-import { Users, Menu, X, Search, FileText } from "lucide-react";
+import { Users, Menu, X, Search, FileText, Radio } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { path: "/candidates", label: "Candidates", labelNp: "उम्मेदवारहरू", icon: Users },
   { path: "/manifesto", label: "Manifesto", labelNp: "घोषणापत्र", icon: FileText },
+{ path: "/live-update", label: "Live Update", labelNp: "प्रत्यक्ष अपडेट", icon: Radio },
 ];
 
 export function Header() {

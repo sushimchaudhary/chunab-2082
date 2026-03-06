@@ -9,6 +9,8 @@ import AnalyticsPage from "./pages/AnalyticsPage";
 import NotFound from "./pages/NotFound";
 import { ManifestoSection } from "./pages/ManifestoPage";
 
+import VoteCountPage from "./pages/VoteCountPage";
+
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,7 @@ const App = () => (
           <Route path="/candidates" element={<CandidatesPage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />
            <Route path="/manifesto" element={<ManifestoSection />} />
+           <Route path="/live-update" element={<VoteCountPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
