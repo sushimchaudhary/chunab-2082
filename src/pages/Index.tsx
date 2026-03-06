@@ -235,7 +235,7 @@ const Index = () => {
         onOpenChange={setDetailOpen}
       />
 
-      <VoteCounte />
+     
 
       {/* Charts Grid - Dark Containers */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">

@@ -33,18 +33,18 @@ const ELECTION_SOURCES = [
 
 export default function VoteCountI() {
   const [activeTab, setActiveTab] = useState(ELECTION_SOURCES[0].url);
-  const [key, setKey] = useState(0); // Iframe refresh गर्नका लागि
+  const [key, setKey] = useState(0); 
 
   const handleRefresh = () => setKey((prev) => prev + 1);
 
   return (
     <div className="min-h-screen  text-white font-nepali">
       {/* --- PREMIUM HEADER --- */}
-      <div className="pt-6 pb-4 px-4 border-b border-white/5">
-        <div className="max-w-7xl mx-auto">
+      <div className="pt-6 pb-4 px-1 border-b border-white/5">
+        <div className="max-w-8xl mx-auto">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="pb-3">
-              <div className="max-w-7xl mx-auto flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-6xl mx-auto flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div>
                   <h2 className="text-xl md:text-2xl font-bold text-red-600 italic  uppercase flex items-center gap-2">
                     <span className="bg-red-600 text-white px-2 not-italic ">
@@ -78,7 +78,7 @@ export default function VoteCountI() {
 
       {/* --- MODERN TABS (Responsive & Styled) --- */}
       <div className="sticky top-20 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex p-1">
+        <div className="max-w-8xl mx-auto flex py-3">
           {ELECTION_SOURCES.map((source) => (
             <button
               key={source.id}
@@ -104,7 +104,7 @@ export default function VoteCountI() {
       </div>
 
       {/* --- IFRAME DISPLAY --- */}
-      <div className="relative w-full h-[calc(100vh-160px)] md:h-[calc(130vh-200px)] bg-zinc-950 overflow-hidden">
+      <div className="relative w-full h-[calc(100vh-160px)] md:h-[calc(150vh-200px)] bg-zinc-950 overflow-hidden">
         {/* Loader behind Iframe */}
         <div className="absolute inset-0 flex items-center justify-center -z-10 bg-[#0a0a0a]">
           <div className="flex flex-col items-center gap-4">
